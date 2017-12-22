@@ -1,0 +1,14 @@
+version: '2'
+services:
+    kukulkan-mongodb:
+        extends:
+            file: mongodb.yml
+            service: kukulkan-mongodb
+    kukulkan-mysql:
+        extends:
+            file: mysql.yml
+            service: kukulkan-mysql
+    kukulkan-web:
+        extends:
+            file: nginx.yml
+            service: kukulkan-web

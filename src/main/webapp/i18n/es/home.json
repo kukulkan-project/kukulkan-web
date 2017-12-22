@@ -1,0 +1,48 @@
+{
+	"home": {
+		"title": "¡Bienvenido a, Kukulkan!",
+		"subtitle": "Esta es su página de inicio",
+		"logged": {
+			"message": "Está conectado como \"{{username}}\"."
+		},
+		"question": "Si tiene preguntas sobre Kukulkan:",
+		"link": {
+			"homepage": "Página de inicio de Kukulkan",
+			"stackoverflow": "Kukulkan en Stack Overflow",
+			"bugtracker": "Kukulkan seguimiento de errores",
+			"chat": "Sala de chat pública de Kukulkan",
+			"follow": "contacto @Kukulkan en Twitter"
+		},
+		"like": "Si te gusta Kukulkan, danos una estrella en",
+		"github": "GitHub",
+		"infographic": {
+			"kukulkanName": "KUKULKAN",
+			"kukulkanSoftware": "Software",
+			"kukulkanTools": "Architect Tools",
+			"kukulkanDescription": "Herramientas para Desarrollo de Software",
+			"kukulkanWhatIs": "¿Qué es kukulkan?",
+			"kukulkanWhatIsResponse": "kukulkan es una herramienta pensada para los prácticantes de ingeniería de Software, que desean encontrar todo lo que requieren en un único lugar; generadores de código, generación de datos, información de prácticas, etc.",
+			"kukulkanCodeGeneration": "Generación de Codigo",
+			"kukulkanCodeGenerationDescription": "kukulkan tiene un motor genérico para la generación de código, basado en plantillas, a través de las cuales es posible generar arquetipos de proyectos para diferentes tecnologías, habilitando la capacidad de rautilización de código, lineamientos organizacionales, administración de conocimiento y diseño de nuevas arquitecturas de software.",
+			"kukulkanComponent": " Administración de Componentes",
+			"kukulkanComponentDescription": "Kukulkan es un administrador de Activos de Arquitectura catalogados y versionados listos para ser utilizados en diversos proyectos. A través de kukulkan es posible gestionar el conocimiento y realización maximizando tiempos y costos en análisis, diseño, implementación y pruebas en los diferentes proyectos de software.",
+			"kukulkanOtherServices": " Otros Servicios",
+			"kukulkanOtherServicesSearch": "Buscador de Componentes",
+			"kukulkanOtherServicesAppGeneration": "Generador de Aplicaciones",
+			"kukulkanOtherServicesCloud": "Conectividad con la Nube",
+			"kukulkanOtherServicesArchetypes": "Arquetipos de Software",
+			"kukulkanOtherServicesDataGenerated": "Generación de Datos",
+			"kukulkanComparation": " Kukulkan vs Otros",
+			"kukulkanComparationOne": "Código abierto",
+			"kukulkanComparationTwo": "Se puede adaptar para varias tecnologías.",
+			"kukulkanComparationThree": "Lineamientos de acuerdo a lo que el cliente solicita.",
+			"kukulkanComparationFour": "Fácil de extender",
+			"kukulkanComparationOthersOne": "Son de propietario",
+			"kukulkanComparationOthersTwo": "Solo para tecnologìas específicas.",
+			"kukulkanComparationOthersThree": "Lineamientos específicos.",
+			"kukulkanComparationOthersFour": "Difícil de extender",
+			"kukulkanCloudSupport": "Soporte en la Nube",
+			"kukulkanCloudSupportDescription": "No se necesita instalar nada todo se accede a través de un navegador web con conexión a red."
+		}
+	}
+}

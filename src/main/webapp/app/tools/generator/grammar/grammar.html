@@ -1,0 +1,79 @@
+<div >
+	<section class="bg-black text-center bg-section">
+		<div class="container">
+			<h2>Project Generator</h2>
+		</div>
+	</section>
+	
+	<section class="text-centerbg-section ">
+		<div class="container">
+					<h2 data-translate="grammar.title"
+			translate-values="{username: '{{vm.settingsAccount.login}}'}">
+			User settings for [<b>{{vm.settingsAccount.login}}</b>]
+		</h2>
+
+		<div class="alert alert-success" ng-show="vm.success"
+			data-translate="settings.messages.success">
+			<strong>Settings saved!</strong>
+		</div>
+
+		<jhi-alert-error></jhi-alert-error>
+		<form name="form" role="form" novalidate ng-submit="vm.action()"
+			show-validation>
+			<div class="form-group">
+				<label for="codemirror" data-translate="grammar.form.grammar">Kukulkan Grammar</label>
+				<div ui-ace="vm.editorOptions" ng-model="vm.code"></div>
+			</div>
+			<button type="submit" ng-disabled="form.$invalid"
+				class="btn btn-danger" data-translate="grammar.form.button">Save</button>
+			<div class="form-group">
+				<div ui-ace="vm.consoleOptions" readonly ng-model="vm.console"></div>
+			</div>	
+			<div ng-if="vm.generatedDto.url">
+				<div class="alert alert-info" role="alert">
+				  App Generated at <a href="{{vm.generatedDto.url}}" class="alert-link">{{vm.generatedDto.fileName}}.zip</a>
+				</div>
+            </div>
+		</form>
+			
+		<div ng-if="vm.generatedDto.url">
+			<h2 data-translate="grammar.general" ></h2>
+        </div>
+
+		<div ng-repeat="element in vm.generatedDto.mainElements track by $index" class="form-group" >
+			<label>{{element.simplePath}}</label>
+			<div ui-ace="{
+			  useWrapMode : true,
+			  showGutter: {{element.editor.showGutter}},
+			  theme:'{{element.editor.theme}}',
+			  mode: '{{element.editor.language}}',
+			  firstLineNumber: {{element.editor.firstLineNumber}},
+			  readOnly: {{element.editor.readOnly}}
+			}" ng-model="element.content"></div>
+		</div>	
+		
+		<div ng-if="vm.generatedDto.url">
+			<h2 data-translate="grammar.element" >
+        </div>
+		</h2>
+		
+		<div ng-repeat="entity in vm.generatedDto.entities track by $index" class="form-group" >
+				<h2><b>{{entity.entityName}}</b></h2>
+				<div ng-repeat="element in entity.elements track by $index" class="form-group" >
+				<label>{{element.simplePath}}</label>
+				<div ui-ace="{
+				  useWrapMode : true,
+				  showGutter: {{element.editor.showGutter}},
+				  theme:'{{element.editor.theme}}',
+				  mode: '{{element.editor.language}}',
+				  firstLineNumber: {{element.editor.firstLineNumber}},
+				  readOnly: {{element.editor.readOnly}}
+				}" ng-model="element.content"></div>
+				</div>
+		</div>	
+		</div>
+	</section>
+	<div class="well">
+
+	</div>
+</div>

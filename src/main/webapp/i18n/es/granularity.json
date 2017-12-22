@@ -1,0 +1,24 @@
+{
+    "kukulkancraftsmanApp": {
+        "granularity" : {
+            "home": {
+                "title": "Granularities",
+                "createLabel": "Crear nuevo Granularity",
+                "createOrEditLabel": "Crear o editar Granularity"
+            },
+            "created": "Un nuevo Granularity ha sido creado con el identificador {{ param }}",
+            "updated": "Un Granularity ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Granularity ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Granularity {{ id }}?"
+            },
+            "detail": {
+                "title": "Granularity"
+            },
+            "name": "Name",
+            "description": "Description",
+            "briefDescription": "Brief Description",
+            "order": "Order"
+        }
+    }
+}

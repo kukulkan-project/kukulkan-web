@@ -1,0 +1,48 @@
+{
+	"home": {
+		"title": "Welcome, Java Kukulkan!",
+		"subtitle": "This is your homepage",
+		"logged": {
+			"message": "You are logged in as user \"{{username}}\"."
+		},
+		"question": "If you have any question on Kukulkan:",
+		"link": {
+			"homepage": "Kukulkan homepage",
+			"stackoverflow": "Kukulkan on Stack Overflow",
+			"bugtracker": "Kukulkan bug tracker",
+			"chat": "Kukulkan public chat room",
+			"follow": "follow @jKukulkan on Twitter"
+		},
+		"like": "If you like Kukulkan, don't forget to give us a star on",
+		"github": "GitHub",
+		"infographic": {
+			"kukulkanName": "KUKULKAN",
+			"kukulkanSoftware": "Software",
+			"kukulkanTools": "Architect Tools",
+			"kukulkanDescription": "Software Development Tools",
+			"kukulkanWhatIs": "What is kukulkan?",
+			"kukulkanWhatIsResponse": "Kukulkan is a tool designed for software engineering practitioners, who want to find everything they need in one place; Code generators, data generation, practice information, etc.",
+			"kukulkanCodeGeneration": "Code Generation",
+			"kukulkanCodeGenerationDescription": "Kukulkan has a generic code generation engine, based on templates, through which it is possible to generate archetypes of projects for different technologies, enabling the ability to code code, organizational guidelines, knowledge management and design of new architectures software.",
+			"kukulkanComponent": " Component Management",
+			"kukulkanComponentDescription": "Kukulkan is an Asset Management Architecture cataloged and versioned ready to be used in various projects. Through Kukulkan it is possible to manage the knowledge and realization maximizing times and costs in analysis, design, implementation and tests in the different software projects.",
+			"kukulkanOtherServices": " Other services",
+			"kukulkanOtherServicesSearch": "Components Finder",
+			"kukulkanOtherServicesAppGeneration": "Application Generator",
+			"kukulkanOtherServicesCloud": "Cloud Connectivity",
+			"kukulkanOtherServicesArchetypes": "Software Archetypes",
+			"kukulkanOtherServicesDataGenerated": "Data Generation",
+			"kukulkanComparation": " Kukulkan vs Others",
+			"kukulkanComparationOne": "Open Source",
+			"kukulkanComparationTwo": "It can be adapted for various technologies.",
+			"kukulkanComparationThree": "Guidelines according to what the client requests.",
+			"kukulkanComparationFour": "Easy to extend",
+			"kukulkanComparationOthersOne": "Proprietary tool",
+			"kukulkanComparationOthersTwo": "Only for specific technologies.",
+			"kukulkanComparationOthersThree": "Lineamientos específicos.",
+			"kukulkanComparationOthersFour": "Specific guidelines.",
+			"kukulkanCloudSupport": "Support in the Cloud",
+			"kukulkanCloudSupportDescription": "No need to install anything is accessed through a web browser with network connection."
+		}
+	}
+}

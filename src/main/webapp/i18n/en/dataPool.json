@@ -1,0 +1,33 @@
+{
+    "kukulkancraftsmanApp": {
+        "dataPool": {
+            "home": {
+                "title": "Data Pools",
+                "createLabel": "Create a new Data Pool",
+                "createOrEditLabel": "Create or edit a Data Pool"
+            },
+            "created": "A new Data Pool is created with identifier {{ param }}",
+            "updated": "A Data Pool is updated with identifier {{ param }}",
+            "deleted": "A Data Pool is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Data Pool {{ id }}?"
+            },
+            "detail": {
+                "title": "Data Pool"
+            },
+            "name": "Name",
+            "data": "Data",
+            "dataSource": "Data Source",
+            "request": {
+                "rowsNumber": "Rows number",
+                "addDataTypes": "Added columns",
+                "repeatDataTypes": "Repeat",
+                "repeatTimes": "Repeatition times"
+            },
+            "dataType": {
+                "header": "Header",
+                "type": "Type"
+            }
+        }
+    }
+}

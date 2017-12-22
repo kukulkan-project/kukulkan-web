@@ -1,0 +1,584 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-09-09T01:12:54.660Z",
+	"__export_source": "insomnia.desktop.app:v5.7.14",
+	"resources": [
+		{
+			"_id": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"parentId": null,
+			"modified": 1504802447307,
+			"created": 1504802447307,
+			"name": "kukulkan",
+			"description": "",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_a4398a64086144e5acb11ab138b561b8",
+			"parentId": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"modified": 1504802480993,
+			"created": 1504802480993,
+			"name": "Base Environment",
+			"data": {},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_8a59bba3c04c4864933a426b0107481f",
+			"parentId": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"modified": 1504804802364,
+			"created": 1504804802364,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_e2b84f13ee674fd09503f571bfd9ecd4",
+			"parentId": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"modified": 1504890800468,
+			"created": 1504804706272,
+			"name": "authenticate",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1504804706272,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_07d5617a455046338b81493978caaca2",
+			"parentId": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"modified": 1504891135610,
+			"created": 1504891112510,
+			"name": "manage-user",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1500271730785.5,
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"parentId": "wrk_de36290528644d86a7b5905e0cfd9143",
+			"modified": 1504901402345,
+			"created": 1504901393727,
+			"name": "manage-account",
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1498005243042.25,
+			"_type": "request_group"
+		},
+		{
+			"_id": "env_4ae5e8e56e5a44e89a56a48c80cebf30",
+			"parentId": "env_a4398a64086144e5acb11ab138b561b8",
+			"modified": 1504893694749,
+			"created": 1504804626310,
+			"name": "development",
+			"data": {
+				"domain": "http://localhost:8080",
+				"authToken": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfVVNFUiIsImV4cCI6MTUwNjYzMjE3OX0.CkKvCBXWhYoxKZ1avEkggQEz6Oga5-zQoKSUGX4e6SFoB_cpf-LCksGK1Ras7ocqzZ2KFwHU2pc3iUjhRAAIDA"
+			},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "req_72310e1b9b5241568f350976bee03546",
+			"parentId": "fld_e2b84f13ee674fd09503f571bfd9ecd4",
+			"modified": 1504890638963,
+			"created": 1504804745744,
+			"url": "{{ domain  }}/api/authenticate",
+			"name": "/api/authenticate",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"username\": \"admin\",\n\t\"password\": \"admin\",\n\t\"rememberMe\": true\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_8f2a9e79c3784250bb8e89e5b3f660db"
+				}
+			],
+			"authentication": {},
+			"metaSortKey": -1504804745744,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_b7a1d178bc9941ea9f85926406ef8f6e",
+			"parentId": "fld_07d5617a455046338b81493978caaca2",
+			"modified": 1504893686042,
+			"created": 1504891112520,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/users",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{authToken}}"
+			},
+			"metaSortKey": -1504804745744,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_95f687ac4e724280a96e92cd7e6fe7c0",
+			"parentId": "fld_07d5617a455046338b81493978caaca2",
+			"modified": 1504894937315,
+			"created": 1504892261022,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/users",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": null,\n\t\"login\": \"tesla\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"tesla@gmail.com\",\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": null,\n\t\"createdDate\": null,\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"resetDate\": null,\n\t\"resetKey\": null,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745794,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_1b873b272e7f460a8041421274e1933b",
+			"parentId": "fld_07d5617a455046338b81493978caaca2",
+			"modified": 1504893730344,
+			"created": 1504893114919,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/users",
+			"description": "",
+			"method": "PUT",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": \"59b2d669e264ee16dc065fe4\",\n\t\"login\": \"tesla\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"tesla@gmail.com\",\n\t\"imageUrl\": null,\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": \"admin\",\n\t\"createdDate\": \"2017-09-08T12:42:01.396-05:00\",\n\t\"lastModifiedBy\": \"admin\",\n\t\"lastModifiedDate\": \"2017-09-08T12:42:01.396-05:00\",\n\t\"authorities\": [\n\t\t\"ROLE_USER\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1492395963013.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_09782d2944234733b4876c638084089a",
+			"parentId": "fld_07d5617a455046338b81493978caaca2",
+			"modified": 1504894920099,
+			"created": 1504893361229,
+			"url": "{{ domain  }}/api/users/tesla",
+			"name": "/api/users/{login}",
+			"description": "",
+			"method": "DELETE",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1490327832558.125,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_dc668aee91fb4ffdacf36ffc6dd8712a",
+			"parentId": "fld_07d5617a455046338b81493978caaca2",
+			"modified": 1504895870419,
+			"created": 1504894900268,
+			"url": "{{ domain  }}/api/users/tesla",
+			"name": "/api/users/{login}",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{authToken}}"
+			},
+			"metaSortKey": -1504804745769,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_6f62cc8a39f2403bbf720f59aa5f1858",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504905604358,
+			"created": 1504901393737,
+			"url": "{{ domain  }}/api/activate",
+			"name": "/api/active",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "key",
+					"value": "83886298578932109474",
+					"id": "pair_89d8728b99af4d3abe3747e569a668bb"
+				}
+			],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{authToken}}"
+			},
+			"metaSortKey": -1504804745819,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_a3f01559486e48ed8e378b91be31cdc3",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504905232938,
+			"created": 1504901393739,
+			"url": "{{ domain  }}/api/account",
+			"name": "/api/account",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"activated\": true,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t],\n\t\"createdBy\": \"admin\",\n\t\"createdDate\": null,\n\t\"email\": \"testlas@gmail.com\",\n\t\"firstName\": \"Nikola\",\n\t\"id\": null,\n\t\"imageUrl\": null,\n\t\"langKey\": \"en\",\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"lastName\": \"Tesla\",\n\t\"login\": \"tesla\"\n}"
+			},
+			"parameters": [],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_8aa03d7cad1c4dbfb63516f95fbca735"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745794,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5a051d267dda4042bfb4e0cf3849a1e1",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504905615504,
+			"created": 1504901393744,
+			"url": "{{ domain  }}/api/account",
+			"name": "/api/account",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{authToken}}"
+			},
+			"metaSortKey": -1504804745844,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5b7a2c464c534f8b8b0ea5627f869cde",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504904167552,
+			"created": 1504901614281,
+			"url": "{{ domain  }}/api/authenticate",
+			"name": "/api/authenticate",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [],
+			"headers": [],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{authToken}}"
+			},
+			"metaSortKey": -1504804745806.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_40b0e344c3c6424bafef8ac9a7cd77e7",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504905461973,
+			"created": 1504901677578,
+			"url": "{{ domain  }}/api/register",
+			"name": "/api/register",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": null,\n\t\"login\": \"test\",\n\t\"password\": \"test\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"test@gmail.com\",\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": null,\n\t\"createdDate\": null,\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"resetDate\": null,\n\t\"resetKey\": null,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745781.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_269194c03baf47a18ac33a48565bd9d3",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504901707575,
+			"created": 1504901681673,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/account/change_password",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": null,\n\t\"login\": \"tesla\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"tesla@gmail.com\",\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": null,\n\t\"createdDate\": null,\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"resetDate\": null,\n\t\"resetKey\": null,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745787.75,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_c3fb7982545b4f32901c5a9e6f23a074",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504904726115,
+			"created": 1504901689162,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/account/reset_password/finish",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": null,\n\t\"login\": \"tesla\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"tesla@gmail.com\",\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": null,\n\t\"createdDate\": null,\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"resetDate\": null,\n\t\"resetKey\": null,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "key",
+					"value": "71637145439771771430",
+					"id": "pair_b918885f6e0447aaa6e5b83725d3866f"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745784.625,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_d1d78ef0bb21408a9ad37a80878a58f1",
+			"parentId": "fld_6c80a4ba67ef46ffb660a1e2c9dee671",
+			"modified": 1504901759430,
+			"created": 1504901690545,
+			"url": "{{ domain  }}/api/users",
+			"name": "/api/account/reset_password/init",
+			"description": "",
+			"method": "POST",
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"id\": null,\n\t\"login\": \"tesla\",\n\t\"firstName\": \"Nikola\",\n\t\"lastName\": \"Tesla\",\n\t\"email\": \"tesla@gmail.com\",\n\t\"activated\": true,\n\t\"langKey\": \"es\",\n\t\"createdBy\": null,\n\t\"createdDate\": null,\n\t\"lastModifiedBy\": null,\n\t\"lastModifiedDate\": null,\n\t\"resetDate\": null,\n\t\"resetKey\": null,\n\t\"authorities\": [\n\t\t\"ROLE_USER\",\n\t\t\"ROLE_ADMIN\"\n\t]\n}"
+			},
+			"parameters": [
+				{
+					"name": "page",
+					"value": "0",
+					"id": "pair_4fe527ac25ab4538b5fe9902826c7599"
+				},
+				{
+					"name": "size",
+					"value": "20",
+					"id": "pair_3fb8cf3f32434df780239ff17675411f"
+				},
+				{
+					"name": "sort",
+					"value": "id,asc",
+					"id": "pair_3ab4b5cfa0da4b09a054c98c888b9abd"
+				}
+			],
+			"headers": [
+				{
+					"name": "Content-Type",
+					"value": "application/json",
+					"id": "pair_77319228bf71439e8f7a86d31965866a"
+				}
+			],
+			"authentication": {
+				"type": "bearer",
+				"token": "{{ authToken  }}"
+			},
+			"metaSortKey": -1504804745783.0625,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		}
+	]
+}

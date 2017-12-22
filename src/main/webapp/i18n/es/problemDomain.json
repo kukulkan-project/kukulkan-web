@@ -1,0 +1,24 @@
+{
+    "kukulkancraftsmanApp": {
+        "problemDomain" : {
+            "home": {
+                "title": "Problem Domains",
+                "createLabel": "Crear nuevo Problem Domain",
+                "createOrEditLabel": "Crear o editar Problem Domain"
+            },
+            "created": "Un nuevo Problem Domain ha sido creado con el identificador {{ param }}",
+            "updated": "Un Problem Domain ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Problem Domain ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Problem Domain {{ id }}?"
+            },
+            "detail": {
+                "title": "Problem Domain"
+            },
+            "name": "Name",
+            "description": "Description",
+            "briefDescription": "Brief Description",
+            "order": "Order"
+        }
+    }
+}

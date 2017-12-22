@@ -1,0 +1,24 @@
+{
+    "kukulkancraftsmanApp": {
+        "report" : {
+            "home": {
+                "title": "Reportes",
+                "createLabel": "Crear nuevo Reporte",
+                "createOrEditLabel": "Crear o editar Report"
+            },
+            "created": "Un nuevo Report ha sido creado con el identificador {{ param }}",
+            "updated": "Un Report ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Report ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar el Reporte {{ id }}?"
+            },
+            "detail": {
+                "title": "Reporte"
+            },
+            "nombre": "Nombre",
+            "briefDescription": "Descripción Corta",
+            "description": "Descripción",
+            "reportType": "Tipo de Reporte"
+        }
+    }
+}

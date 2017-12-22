@@ -1,0 +1,16 @@
+version: '2'
+services:
+    kukulkan-mongodb:
+        image: mongo:3.2.10
+        ports:
+            - "27017:27017"
+        command: mongos --configdb kukulkancraftsman-mongodb-config
+    kukulkan-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    kukulkan-mongodb-config:
+        image: mongo:3.2.10
+        container_name: kukulkan-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

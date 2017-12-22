@@ -1,0 +1,13 @@
+
+
+${AnsiColor.BRIGHT_GREEN}  ██╗  ██╗██╗   ██╗██╗  ██╗██╗   ██╗██╗     ██╗  ██╗ █████╗ ███╗   ██╗
+${AnsiColor.GREEN}  ██║ ██╔╝${AnsiColor.GREEN}██║   ██║██║ ██╔╝██║   ██║██║     ██║ ██╔╝██╔══██╗████╗  ██║
+${AnsiColor.GREEN}  █████╔╝ ${AnsiColor.GREEN}██║   ██║█████╔╝ ██║   ██║██║     █████╔╝ ███████║██╔██╗ ██║
+${AnsiColor.GREEN}  ██╔═██╗ ${AnsiColor.GREEN}██║   ██║██╔═██╗ ██║   ██║██║     ██╔═██╗ ██╔══██║██║╚██╗██║
+${AnsiColor.GREEN}  ██║  ██╗${AnsiColor.GREEN}╚██████╔╝██║  ██╗╚██████╔╝███████╗██║  ██╗██║  ██║██║ ╚████║
+${AnsiColor.GREEN}  ╚═╝  ╚═╝${AnsiColor.GREEN} ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+                                                                                                                
+${AnsiColor.YELLOW}		:: Running kukulkan ::  
+${AnsiColor.BRIGHT_YELLOW}		:: v1.0.0 Release   ::${AnsiColor.DEFAULT}
+
+

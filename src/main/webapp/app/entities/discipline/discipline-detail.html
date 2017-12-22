@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.discipline.detail.title">Discipline</span> {{vm.discipline.id}}</h2>
+        <hr>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.discipline.name">Name</span></dt>
+            <dd>
+                <span>{{vm.discipline.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.discipline.description">Description</span></dt>
+            <dd>
+                <span>{{vm.discipline.description}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.discipline.briefDescription">Brief Description</span></dt>
+            <dd>
+                <span>{{vm.discipline.briefDescription}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.discipline.order">Order</span></dt>
+            <dd>
+                <span>{{vm.discipline.order}}</span>
+            </dd>
+        </dl>
+
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="discipline-detail.edit({id:vm.discipline.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>

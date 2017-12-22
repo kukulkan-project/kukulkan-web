@@ -1,0 +1,95 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDataStoreLabel" data-translate="kukulkancraftsmanApp.dataStore.home.createOrEditLabel">Create or edit a Data Store</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dataStore.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.dataStore.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.dataStore.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.url" for="field_url">Url</label>
+            <input type="text" class="form-control" name="url" id="field_url"
+                    ng-model="vm.dataStore.url"
+                    ng-pattern=""/>
+            <div ng-show="editForm.url.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.url.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="Url">
+                    This field should follow pattern for "Url".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.schema" for="field_schema">Schema</label>
+            <input type="text" class="form-control" name="schema" id="field_schema"
+                    ng-model="vm.dataStore.schema" required/>
+            <div ng-show="editForm.driverClass.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.driverClass.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.driverClass" for="field_driverClass">Driver Class</label>
+            <input type="text" class="form-control" name="driverClass" id="field_driverClass"
+                    ng-model="vm.dataStore.driverClass"
+                    required ng-pattern=""/>
+            <div ng-show="editForm.driverClass.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.driverClass.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.driverClass.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="Driver Class">
+                    This field should follow pattern for "Driver Class".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.username" for="field_username">Username</label>
+            <input type="text" class="form-control" name="username" id="field_username"
+                    ng-model="vm.dataStore.username"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.password" for="field_password">Password</label>
+            <input type="password" class="form-control" name="password" id="field_password"
+                    ng-model="vm.dataStore.password"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.dataStore.tableTypes" for="field_tableTypes">Table Types</label>
+            <select class="form-control" name="tableTypes" ng-model="vm.dataStore.tableTypes" id="field_tableTypes">
+                <option value="TABLE" data-translate="kukulkancraftsmanApp.TableTypes.TABLE">TABLE</option>
+                <option value="TABLE_VIEW" data-translate="kukulkancraftsmanApp.TableTypes.TABLE_VIEW">TABLE_VIEW</option>
+                <option value="VIEW" data-translate="kukulkancraftsmanApp.TableTypes.VIEW">VIEW</option>
+            </select>
+        </div>
+
+    </div>
+    
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-click="vm.isTestingConnection=true" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-transfer"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.dataStore.action.testConnection">Test Connection</span>
+        </button>        
+        <button type="submit" ng-click="vm.isTestingConnection=false" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

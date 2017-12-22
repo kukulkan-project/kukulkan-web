@@ -1,0 +1,37 @@
+
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.phase.detail.title">Phase</span> {{vm.phase.id}}</h2>
+        <hr>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.phase.name">Name</span></dt>
+            <dd>
+                <span>{{vm.phase.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.phase.description">Description</span></dt>
+            <dd>
+                <span>{{vm.phase.description}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.phase.briefDescription">Brief Description</span></dt>
+            <dd>
+                <span>{{vm.phase.briefDescription}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.phase.order">Order</span></dt>
+            <dd>
+                <span>{{vm.phase.order}}</span>
+            </dd>
+        </dl>
+
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="phase-detail.edit({id:vm.phase.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>

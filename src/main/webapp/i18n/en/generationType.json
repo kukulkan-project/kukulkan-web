@@ -1,0 +1,11 @@
+{
+	"kukulkancraftsmanApp": {
+		"GenerationType": {
+			"null": "",
+			"TABLE": "TABLE",
+			"SEQUENCE": "SEQUENCE",
+			"IDENTITY": "IDENTITY",
+			"AUTO": "AUTO"
+		}
+	}
+}

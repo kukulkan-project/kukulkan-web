@@ -1,0 +1,53 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.action()" show-validation>
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.dataStore.detail.title">Data Store</span> {{vm.dataStore.id}}</h2>
+        <hr>
+        <jhi-alert></jhi-alert>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.dataStore.name">Name</span></dt>
+            <dd>
+                <span>{{vm.dataStore.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.dataStore.url">Url</span></dt>
+            <dd>
+                <span>{{vm.dataStore.url}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.dataStore.schema">Schema</span></dt>
+            <dd>
+                <span>{{vm.dataStore.schema}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.dataStore.driverClass">Driver Class</span></dt>
+            <dd>
+                <span>{{vm.dataStore.driverClass}}</span>
+            </dd>
+        </dl>
+
+		<div class="form-group">
+		    <button type="submit" class="btn btn-info" ng-click="vm.option='runScript'"">
+            	<span class="glyphicon glyphicon-play"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.dataStore.action.runScript">Running Script</span>
+        	</button>
+        	<button type="submit" class="btn btn-primary" ng-click="vm.option='testConnection'">
+            	<span class="glyphicon glyphicon-transfer"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.dataStore.action.testConnection">Test Connection</span>
+	        </button>
+	        <button type="submit" class="btn btn-info" ng-click="vm.option='createSchema'"">
+	            <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.dataStore.action.createSchema.label">Create Schema</span>
+	        </button> 
+	        <button type="submit" class="btn btn-danger" ng-click="vm.option='dropSchema'"">
+	            <span class="glyphicon glyphicon-minus-sign"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.dataStore.action.dropSchema.label">Create Schema</span>
+	        </button>  
+	        <div ui-ace="vm.editorOptions" ng-model="vm.dataStore.script"></div>      		
+		</div>
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+        <button type="button" ui-sref="data-store-detail.edit({id:vm.dataStore.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>
+</form>

@@ -1,0 +1,89 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.generate()" show-validation>
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.project.detail.title">Project</span> {{vm.project.id}}</h2>
+        <hr>
+        <jhi-alert></jhi-alert>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.project.projectId">Project Id</span></dt>
+            <dd>
+                <span>{{vm.project.projectId}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.appName">App Name</span></dt>
+            <dd>
+                <span>{{vm.project.appName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.author">Author</span></dt>
+            <dd>
+                <span>{{vm.project.author}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.version">Version</span></dt>
+            <dd>
+                <span>{{vm.project.version}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.year">Year</span></dt>
+            <dd>
+                <span>{{vm.project.year}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.groupId">Group Id</span></dt>
+            <dd>
+                <span>{{vm.project.groupId}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.packaging">Packaging</span></dt>
+            <dd>
+                <span>{{vm.project.packaging}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.dataStore">Data Stor</span></dt>
+            <dd>
+                <span >{{vm.project.dataStore.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.daoLayerName">Dao Layer Name</span></dt>
+            <dd>
+                <span>{{vm.project.daoLayerName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.domainLayerName">Domain Layer Name</span></dt>
+            <dd>
+                <span>{{vm.project.domainLayerName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.serviceLayerName">Service Layer Name</span></dt>
+            <dd>
+                <span>{{vm.project.serviceLayerName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.exceptionLayerName">Exception Layer Name</span></dt>
+            <dd>
+                <span>{{vm.project.exceptionLayerName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.webLayerName">Web Layer Name</span></dt>
+            <dd>
+                <span>{{vm.project.webLayerName}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.archetype">Archetype</span></dt>
+            <dd>
+                <span data-translate="{{'kukulkancraftsmanApp.Archetype.' + vm.project.archetype}}">{{vm.project.archetype}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.project.file">File</span></dt>
+       	    <dd>
+            <div ng-if="vm.project.file">
+                <a ng-click="vm.openFile(vm.project.fileContentType, vm.project.file)" data-translate="entity.action.open">open</a>
+                {{vm.project.fileContentType}}, {{vm.byteSize(vm.project.file)}}
+            </div>
+        </dd>
+        </dl>
+
+		<button type="submit" class="btn btn-info">
+            	<span class="glyphicon glyphicon-play"></span>&nbsp;<span data-translate="kukulkancraftsmanApp.project.action.generate.label">Generating</span>
+        </button>        
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="project-detail.edit({id:vm.project.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>
+</form>

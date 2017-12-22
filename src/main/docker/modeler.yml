@@ -1,0 +1,6 @@
+version: '2'
+services:
+    kukulkan-modeler:
+        image: danimaniarqsoft/modeler:1.0.0
+        ports:
+            - "80:80"

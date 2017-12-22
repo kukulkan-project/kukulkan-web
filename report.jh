@@ -1,0 +1,29 @@
+entity Report {
+    nombre String required,
+    briefDescription String required,
+    description TextBlob,
+    reportType ReportType
+}
+
+entity ReportElement {
+	nombre String,
+    description TextBlob,
+    weight Double,
+}
+
+entity ReportIndicator {
+    nombre String required,
+    briefDescription String required,
+    description TextBlob required,
+    order Integer
+}
+
+enum ReportType {
+    OPERATIONAL, INFRAESTRUCTURE
+}
+
+// Set pagination options
+paginate Report, ReportIndicator, ReportElement with pagination
+
+// Set service options to all except few
+service all with serviceImpl

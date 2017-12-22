@@ -1,0 +1,67 @@
+
+<div>
+	<h2>
+		<span data-translate="kukulkancraftsmanApp.reportElement.detail.title">Report
+			Element</span> {{vm.reportElement.id}}
+	</h2>
+	<hr>
+	<jhi-alert-error></jhi-alert-error>
+	<dl class="dl-horizontal jh-entity-details">
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.reportElement.nombre">Nombre</span>
+		</dt>
+		<dd>
+			<span>{{vm.reportElement.nombre}}</span>
+		</dd>
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.reportElement.description">Description</span>
+		</dt>
+		<dd>
+			<span>{{vm.reportElement.description}}</span>
+		</dd>
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.reportElement.weight">Weight</span>
+		</dt>
+		<dd>
+			<span>{{vm.reportElement.weight}}</span>
+		</dd>
+	</dl>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr bgcolor="#065DA9">
+					<th><span><font color="#F2F6FA">#</font></span></th>
+					<th><font color="#F2F6FA">{{vm.reportElement.nombre}}</font></th>
+					<th
+						ng-repeat="indicator in vm.reportElement.indicatorStatus">
+						<span><font color="#F2F6FA">{{indicator.indicator.nombre}}</font></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td bgcolor="#B9E0F2"><b>{{$index+1}}</b></td>
+					<td bgcolor="#D7F0FC"><b>{{vm.reportElement.nombre}}</b></td>
+					<td
+						ng-class="indicatorState.state.name == 'Responsabilidades Asignadas' ? 'active' : (indicatorState.state.name == 'Especificado' ? 'active' : (indicatorState.state.name == 'Implementado' ? 'danger' : (indicatorState.state.name == 'Integrado' ? 'warning' : (indicatorState.state.name == 'Verificado' ? 'info' : (indicatorState.state.name == 'Liberado' ? 'success' : 'active')))))"
+						ng-repeat="indicatorState in vm.reportElement.indicatorStatus">{{vm.searchIndicator(vm.reportElement.indicatorStatus, indicatorState.indicator.id)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<button type="submit" ui-sref="{{ vm.previousState }}"
+		class="btn btn-info">
+		<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span
+			data-translate="entity.action.back"> Back</span>
+	</button>
+
+	<button type="button"
+		ui-sref="report-element-detail.edit({id:vm.reportElement.id})"
+		class="btn btn-primary">
+		<span class="glyphicon glyphicon-pencil"></span> <span
+			class="hidden-sm-down" data-translate="entity.action.edit">
+			Edit</span>
+	</button>
+</div>

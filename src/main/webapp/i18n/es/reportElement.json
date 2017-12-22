@@ -1,0 +1,23 @@
+{
+    "kukulkancraftsmanApp": {
+        "reportElement" : {
+            "home": {
+                "title": "Report Elements",
+                "createLabel": "Crear nuevo Report Element",
+                "createOrEditLabel": "Crear o editar Report Element"
+            },
+            "created": "Un nuevo Report Element ha sido creado con el identificador {{ param }}",
+            "updated": "Un Report Element ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Report Element ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Report Element {{ id }}?"
+            },
+            "detail": {
+                "title": "Report Element"
+            },
+            "nombre": "Nombre",
+            "description": "Description",
+            "weight": "Weight"
+        }
+    }
+}

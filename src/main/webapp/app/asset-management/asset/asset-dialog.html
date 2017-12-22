@@ -1,0 +1,189 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()"
+	show-validation>
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true" ng-click="vm.clear()">&times;</button>
+		<h4 class="modal-title" id="myAssetLabel"
+			data-translate="kukulkancraftsmanApp.asset.home.createOrEditLabel">Create
+			or edit a Asset</h4>
+	</div>
+	<div class="modal-body">
+		<jhi-alert-error></jhi-alert-error>
+		<div class="form-group" ng-show="vm.asset.id">
+			<label for="id" data-translate="global.field.id">ID</label> <input
+				type="text" class="form-control" id="id" name="id"
+				ng-model="vm.asset.id" readonly />
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.name" for="field_name">Name</label>
+			<input type="text" class="form-control" name="name" id="field_name"
+				ng-model="vm.asset.name" required />
+			<div ng-show="editForm.name.$invalid">
+				<p class="help-block" ng-show="editForm.name.$error.required"
+					data-translate="entity.validation.required">This field is
+					required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.author"
+				for="field_author">Author</label> <input type="text"
+				class="form-control" name="author" id="field_author"
+				ng-model="vm.asset.author" required />
+			<div ng-show="editForm.author.$invalid">
+				<p class="help-block" ng-show="editForm.author.$error.required"
+					data-translate="entity.validation.required">This field is
+					required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.version"
+				for="field_version">Version</label> <input type="text"
+				class="form-control" name="version" id="field_version"
+				ng-model="vm.asset.version" required />
+			<div ng-show="editForm.version.$invalid">
+				<p class="help-block" ng-show="editForm.version.$error.required"
+					data-translate="entity.validation.required">This field is
+					required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.comments"
+				for="field_comments">Comments</label> <input type="text"
+				class="form-control" name="comments" id="field_comments"
+				ng-model="vm.asset.comments" />
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.problemDescription"
+				for="field_problemDescription">Problem Description</label> <input
+				type="text" class="form-control" name="problemDescription"
+				id="field_problemDescription" ng-model="vm.asset.problemDescription"
+				required />
+			<div ng-show="editForm.problemDescription.$invalid">
+				<p class="help-block"
+					ng-show="editForm.problemDescription.$error.required"
+					data-translate="entity.validation.required">This field is
+					required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.useInstructions"
+				for="field_useInstructions">Use Instructions</label> <input
+				type="text" class="form-control" name="useInstructions"
+				id="field_useInstructions" ng-model="vm.asset.useInstructions"
+				required />
+			<div ng-show="editForm.useInstructions.$invalid">
+				<p class="help-block"
+					ng-show="editForm.useInstructions.$error.required"
+					data-translate="entity.validation.required">This field is
+					required.</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.asset.location"
+				for="field_location">Location</label> <input type="text"
+				class="form-control" name="location" id="field_location"
+				ng-model="vm.asset.location" />
+		</div>
+
+		<div class="form-group">
+			<label
+				data-translate="kukulkancraftsmanApp.asset.implementationLevel"
+				for="field_implementationLevel">Implementation Level</label> <select
+				class="form-control" id="field_implementationLevel"
+				name="implementationLevel" ng-model="vm.asset.implementationLevelId"
+				ng-options="levelOfImplementation.id as levelOfImplementation.name for levelOfImplementation in vm.levelofimplementations">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label data-translate="kukulkancraftsmanApp.asset.granularity"
+				for="field_granularity">Granularity</label> <select
+				class="form-control" id="field_granularity" name="granularity"
+				ng-model="vm.asset.granularityId"
+				ng-options="granularity.id as granularity.name for granularity in vm.granularities">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label data-translate="kukulkancraftsmanApp.asset.problemDomain"
+				for="field_problemDomain">Problem Domain</label> <select
+				class="form-control" id="field_problemDomain" name="problemDomain"
+				ng-model="vm.asset.problemDomainId"
+				ng-options="problemDomain.id as problemDomain.name for problemDomain in vm.problemdomains">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label data-translate="kukulkancraftsmanApp.asset.phase"
+				for="field_phase">Phase</label> <select class="form-control"
+				id="field_phase" name="phase" ng-model="vm.asset.phaseId"
+				ng-options="phase.id as phase.name for phase in vm.phases">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label data-translate="kukulkancraftsmanApp.asset.discipline"
+				for="field_discipline">Discipline</label> <select
+				class="form-control" id="field_discipline" name="discipline"
+				ng-model="vm.asset.disciplineId"
+				ng-options="discipline.id as discipline.name for discipline in vm.disciplines">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label data-translate="kukulkancraftsmanApp.asset.state"
+				for="field_state">State</label> <select class="form-control"
+				id="field_state" name="state" ng-model="vm.asset.stateId"
+				ng-options="state.id as state.name for state in vm.states">
+				<option value=""></option>
+			</select>
+		</div>
+		<div class="form-group" ngf-drop
+			ngf-change="vm.setFile($file, vm.asset)">
+			<label class="control-label"
+				data-translate="kukulkancraftsmanApp.file.file" for="field_file">File</label>
+			<div>
+				<div ng-if="vm.asset.file" class="help-block clearfix">
+					<a class="pull-left"
+						ng-click="vm.openFile(vm.asset.fileContentType, vm.asset.file)"
+						data-translate="entity.action.open">open</a><br> <span
+						class="pull-left">{{vm.asset.fileContentType}},
+						{{vm.byteSize(vm.asset.file)}}</span>
+					<button type="button"
+						ng-click="vm.asset.file=null;vm.asset.fileContentType=null;"
+						class="btn btn-default btn-xs pull-right">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</div>
+				<button type="button" ngf-select class="btn btn-default btn-block"
+					ngf-change="vm.setFile($file, vm.asset)"
+					data-translate="entity.action.addblob">Add blob</button>
+			</div>
+			<input type="hidden" class="form-control" name="file" id="field_file"
+				ng-model="vm.asset.file" /> <input type="hidden"
+				class="form-control" name="fileContentType"
+				id="field_fileContentType" ng-model="vm.asset.fileContentType" />
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal"
+			ng-click="vm.clear()">
+			<span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span
+				data-translate="entity.action.cancel">Cancel</span>
+		</button>
+		<button type="submit" ng-disabled="editForm.$invalid || vm.isSaving"
+			class="btn btn-primary">
+			<span class="glyphicon glyphicon-save"></span>&nbsp;<span
+				data-translate="entity.action.save">Save</span>
+		</button>
+	</div>
+</form>

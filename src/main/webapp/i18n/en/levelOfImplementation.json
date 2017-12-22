@@ -1,0 +1,24 @@
+{
+    "kukulkancraftsmanApp": {
+        "levelOfImplementation" : {
+            "home": {
+                "title": "Level Of Implementations",
+                "createLabel": "Create a new Level Of Implementation",
+                "createOrEditLabel": "Create or edit a Level Of Implementation"
+            },
+            "created": "A new Level Of Implementation is created with identifier {{ param }}",
+            "updated": "A Level Of Implementation is updated with identifier {{ param }}",
+            "deleted": "A Level Of Implementation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Level Of Implementation {{ id }}?"
+            },
+            "detail": {
+                "title": "Level Of Implementation"
+            },
+            "name": "Name",
+            "description": "Description",
+            "briefDescription": "Brief Description",
+            "order": "Order"
+        }
+    }
+}

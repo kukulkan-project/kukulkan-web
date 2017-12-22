@@ -1,0 +1,42 @@
+{
+	"kukulkancraftsmanApp": {
+		"project": {
+			"home": {
+				"title": "Projects",
+				"createLabel": "Crear un nuevo Proyecto",
+				"createOrEditLabel": "Crear o editar un Proyecto"
+			},
+			"created": "Un nuevo Proyecto es creado con el identificador {{ param }}",
+			"updated": "Un Projecto es actualizado con el identificador {{ param }}",
+			"deleted": "Un proyecto es borrado con el identificador {{ param }}",
+			"delete": {
+				"question": "¿Estás seguro de borrar el Proyecto {{ id }}?"
+			},
+			"detail": {
+				"title": "Proyecto"
+			},
+			"action":{
+				"generate": {
+					"label": "Generate Code",
+					"success": "Code Generation Success",
+					"failure": "Code Generation Failure"
+				}
+			},
+			"projectId": "Id del Proyecto",
+			"appName": "Nombre de la Aplicación",
+			"author": "Autor",
+			"version": "Versión",
+			"year": "Año",
+			"groupId": "Group Id",
+			"packaging": "Packaging",
+			"dataStore": "Data Store",
+			"daoLayerName": "Nombre de la Capa DAO",
+			"domainLayerName": "Nombre de la Capa de Dominio",
+			"serviceLayerName": "Nombre de la Capa de Servicio",
+			"exceptionLayerName": "Nombre de la Capa de Excepciones",
+			"webLayerName": "Nombre de la Capa Web",
+			"archetype": "Arquetipo",
+			"file":"Archivo"
+		}
+	}
+}

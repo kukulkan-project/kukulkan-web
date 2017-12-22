@@ -1,0 +1,32 @@
+version: '2'
+services:
+    kukulkan-app:
+        image: kukulkan:latest
+        depends_on: 
+            - kukulkan-mongodb
+            - kukulkan-mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://kukulkan-mongodb:27017
+            - KUKULKAN_DATA_MYSQL_URI=jdbc:mysql://kukulkan-mysql:3307
+            - KUKULKAN_CONFIG_OUTPUTDIR=/home/app/
+            - KUKULKAN_CONFIG_DOCUMENTURL=http://200.38.177.199/data/
+            - KUKULKAN_CONFIG_EXTERNAL_APPS_MODELER=http://200.38.177.199/dsl-core/
+            - KUKULKAN_CONFIG_EXTERNAL_APPS_PRESENTATION=http://200.38.177.199/kukulkan-presentation
+            - KUKULKAN_CONFIG_EXTERNAL_APPS_SLIDES=http://200.38.177.199/docs/slides.pdf
+        volumes:
+            - "~/data:/home/app"
+        ports:
+            - 8080:8080
+    kukulkan-mongodb:
+        extends:
+            file: mongodb.yml
+            service: kukulkan-mongodb
+    kukulkan-mysql:
+        extends:
+            file: mysql.yml
+            service: kukulkan-mysql
+    kukulkan-web:
+        extends:
+            file: nginx.yml
+            service: kukulkan-web

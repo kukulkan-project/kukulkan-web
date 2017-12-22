@@ -1,0 +1,10 @@
+{
+    "kukulkancraftsmanApp": {
+        "TableTypes" : {
+            "null": "",
+            "TABLE": "TABLE",
+            "TABLE_VIEW": "TABLE_VIEW",
+            "VIEW": "VIEW"
+        }
+    }
+}

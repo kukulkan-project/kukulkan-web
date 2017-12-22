@@ -1,0 +1,24 @@
+{
+    "kukulkancraftsmanApp": {
+        "reportIndicator" : {
+            "home": {
+                "title": "Report Indicators",
+                "createLabel": "Crear nuevo Report Indicator",
+                "createOrEditLabel": "Crear o editar Report Indicator"
+            },
+            "created": "Un nuevo Report Indicator ha sido creado con el identificador {{ param }}",
+            "updated": "Un Report Indicator ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Report Indicator ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Report Indicator {{ id }}?"
+            },
+            "detail": {
+                "title": "Report Indicator"
+            },
+            "nombre": "Nombre",
+            "briefDescription": "Brief Description",
+            "description": "Description",
+            "order": "Order"
+        }
+    }
+}

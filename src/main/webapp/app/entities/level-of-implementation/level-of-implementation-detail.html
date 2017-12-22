@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.levelOfImplementation.detail.title">Level Of Implementation</span> {{vm.levelOfImplementation.id}}</h2>
+        <hr>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.levelOfImplementation.name">Name</span></dt>
+            <dd>
+                <span>{{vm.levelOfImplementation.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.levelOfImplementation.description">Description</span></dt>
+            <dd>
+                <span>{{vm.levelOfImplementation.description}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.levelOfImplementation.briefDescription">Brief Description</span></dt>
+            <dd>
+                <span>{{vm.levelOfImplementation.briefDescription}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.levelOfImplementation.order">Order</span></dt>
+            <dd>
+                <span>{{vm.levelOfImplementation.order}}</span>
+            </dd>
+        </dl>
+
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="level-of-implementation-detail.edit({id:vm.levelOfImplementation.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>

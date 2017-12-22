@@ -1,0 +1,9 @@
+version: '2'
+services:
+    kukulkan-web:
+        image: danimaniarqsoft/kukulkan-web:latest
+        volumes:
+            - "~/data:/usr/share/nginx/html/data:ro"
+        ports:
+            - "80:80"
+        restart: always

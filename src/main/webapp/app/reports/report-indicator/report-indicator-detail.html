@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="kukulkancraftsmanApp.reportIndicator.detail.title">Report Indicator</span> {{vm.reportIndicator.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="kukulkancraftsmanApp.reportIndicator.nombre">Nombre</span></dt>
+        <dd>
+            <span>{{vm.reportIndicator.nombre}}</span>
+        </dd>
+        <dt><span data-translate="kukulkancraftsmanApp.reportIndicator.briefDescription">Brief Description</span></dt>
+        <dd>
+            <span>{{vm.reportIndicator.briefDescription}}</span>
+        </dd>
+        <dt><span data-translate="kukulkancraftsmanApp.reportIndicator.description">Description</span></dt>
+        <dd>
+            <span>{{vm.reportIndicator.description}}</span>
+        </dd>
+        <dt><span data-translate="kukulkancraftsmanApp.reportIndicator.order">Order</span></dt>
+        <dd>
+            <span>{{vm.reportIndicator.order}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="report-indicator-detail.edit({id:vm.reportIndicator.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

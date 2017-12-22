@@ -1,0 +1,124 @@
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDataPoolLabel" data-translate="kukulkancraftsmanApp.dataPool.home.createOrEditLabel">Create or edit a Data Pool</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dataPool.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id" ng-model="vm.dataPool.id" readonly />
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <input type="text" class="form-control" name="name" placeholder="Name" translate translate-attr-placeholder="kukulkancraftsmanApp.dataPool.name" id="field_name" ng-model="vm.dataPool.name" />
+            </div>
+            <div class="panel-body">
+                <h4 data-translate="kukulkancraftsmanApp.dataPool.dataSource">Data Source</h4>
+                <label class="control-label" data-translate="kukulkancraftsmanApp.dataPool.dataSource" for="field_data_source">Data Source</label>
+                <input type="file" class="form-control" name="dataSource" id="field_data_source" />
+                <button type="button" class="btn btn-default" ng-click="vm.toJson()">
+                        <span class="glyphicon glyphicon-upload"></span>
+                    </button>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th data-translate="kukulkancraftsmanApp.dataPool.dataType.header">Header</th>
+                            <th data-translate="kukulkancraftsmanApp.dataPool.dataType.type">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="dataType in vm.dataPool.sourceData">
+                            <td>{{ dataType.header }}</td>
+                            <td>{{ dataType.type }}</td>
+                            <td>
+                                <button type="button" class="btn btn-default" ng-click="vm.removeDataType(dataType, 'sourceData')">
+                                <span class="glyphicon glyphicon-remove"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4 data-translate="kukulkancraftsmanApp.dataPool.request.addDataTypes"> Add Columns</h4>
+                <div class="form-group">
+                    <label class="control-label" data-translate="kukulkancraftsmanApp.dataPool.request.rowsNumber" for="field_rows_number">Rows Number</label>
+                    <input type="number" min="1" ng-disabled="vm.dataPool.sourceData.length > 0" class="form-control" name="rowsNumber" id="field_rows_number" ng-model="vm.dataPool.request.rowsNumber"
+                    />
+                </div>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr ng-repeat="dataType in vm.dataPool.request.addDataTypes">
+                            <td>{{ dataType.header }}</td>
+                            <td>{{ dataType.type }}</td>
+                            <td><button type="button" class="btn btn-default" ng-click="vm.removeDataType(dataType, 'columns')">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" name="dataTypeHeader" placeholder="Header" translate translate-attr-placeholder="kukulkancraftsmanApp.dataPool.dataType.header" id="field_data_type_header" ng-model="vm.columns.dataType.header"
+                                />
+                            </td>
+                            <td>
+                                <select class="form-control" name="dataType" placeholder="Type" ng-model="vm.columns.dataType.type">
+                                    <option value="" disabled selected data-translate="kukulkancraftsmanApp.dataPool.dataType.type">Type</option>
+                                    <option ng-repeat="dataType in vm.dataTypes">{{ dataType }}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default" ng-click="vm.addDataType('columns')">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <label class="control-label" data-translate="kukulkancraftsmanApp.dataPool.request.repeatTimes" for="field_times">Times</label>
+                    <input type="number" min="1" class="form-control" name="times" id="field_times" ng-model="vm.dataPool.request.repeatTimes"
+                    />
+                </div>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr ng-repeat="dataType in vm.dataPool.request.repeatDataTypes">
+                            <td>{{ dataType.header }}</td>
+                            <td>{{ dataType.type }}</td>
+                            <td><button type="button" class="btn btn-default" ng-click="vm.removeDataType(dataType, 'repeat')">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" name="dataTypeHeader" placeholder="Header" translate translate-attr-placeholder="kukulkancraftsmanApp.dataPool.dataType.header" id="field_data_type_header" ng-model="vm.repeat.dataType.header"
+                                />
+                            </td>
+                            <td>
+                                <select class="form-control" name="dataType" placeholder="Type" ng-model="vm.repeat.dataType.type">
+                                    <option value="" disabled selected data-translate="kukulkancraftsmanApp.dataPool.dataType.type">Type</option>
+                                    <option ng-repeat="dataType in vm.dataTypes">{{ dataType }}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-default" ng-click="vm.addDataType('repeat')">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+        <button type="button" ng-disabled="!vm.dataPool.id" ng-csv="vm.toCsv()" csv-label="true" filename="{{vm.dataPool.name}}.csv" charset="8859-1" class="btn btn-primary">
+            <span class="glyphicon glyphicon-download"></span>&nbsp;<span>Download</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,94 @@
+
+<div>
+	<h2>
+		<span data-translate="kukulkancraftsmanApp.report.detail.title">Report</span>
+		{{vm.report.nombre}}
+	</h2>
+	<hr>
+	<jhi-alert-error></jhi-alert-error>
+	<dl class="dl-horizontal jh-entity-details">
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.report.nombre">Nombre</span>
+		</dt>
+		<dd>
+			<span>{{vm.report.nombre}}</span>
+		</dd>
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.report.briefDescription">Brief
+				Description</span>
+		</dt>
+		<dd>
+			<span>{{vm.report.briefDescription}}</span>
+		</dd>
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.report.description">Description</span>
+		</dt>
+		<dd>
+			<span>{{vm.report.description}}</span>
+		</dd>
+		<dt>
+			<span data-translate="kukulkancraftsmanApp.report.reportType">Report
+				Type</span>
+		</dt>
+		<dd>
+			<span
+				data-translate="{{'kukulkancraftsmanApp.ReportType.' + vm.report.reportType}}">{{vm.report.reportType}}</span>
+		</dd>
+	</dl>
+
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr bgcolor="#065DA9">
+					<th><span><font color="#F2F6FA">#</font></span></th>
+					<th><font color="#F2F6FA">Proyecto</font></th>
+					<th
+						ng-repeat="indicator in vm.report.indicators track by indicator.id">
+						<span><font color="#F2F6FA">{{indicator.nombre}}</font></span>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="element in vm.report.elements track by element.id">
+					<td bgcolor="#B9E0F2"><b>{{$index+1}}</b></td>
+					<td bgcolor="#D7F0FC"><b>{{element.nombre}}</b></td>
+					<td
+						ng-class="statusLabel == 'Responsabilidades Asignadas' ? 'active' : (statusLabel == 'Especificado' ? 'active' : (statusLabel == 'Implementado' ? 'danger' : (statusLabel == 'Integrado' ? 'warning' : (statusLabel == 'Verificado' ? 'info' : (statusLabel == 'Liberado' ? 'success' : 'active')))))"
+						ng-repeat="statusLabel in element.statusLabel track by $index">{{statusLabel}}</td>
+				</tr>
+				<tr>
+					<td bgcolor="#B9E0F2"><b></b></td>
+					<td bgcolor="#F78181"><b>Total</b></td>
+					<td bgcolor="#F6D8CE"
+						ng-repeat="totalPercent in vm.report.totalPercent track by $index"><b>{{totalPercent}}</b></td>
+				</tr>
+				<tr>
+					<td bgcolor="#B9E0F2"><b></b></td>
+					<td bgcolor="#F78181"><b>Total Implementado</b></td>
+					<td bgcolor="#F6D8CE"><b>{{vm.report.totalImplemented}}</b></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<button type="submit" ui-sref="{{ vm.previousState }}"
+		class="btn btn-info">
+		<span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span
+			data-translate="entity.action.back"> Back</span>
+	</button>
+
+	<button type="button" ui-sref="report-detail.edit({id:vm.report.id})"
+		class="btn btn-primary">
+		<span class="glyphicon glyphicon-pencil"></span> <span
+			class="hidden-sm-down" data-translate="entity.action.edit">
+			Edit</span>
+	</button>
+	<ui-codemirror ui-codemirror-opts="vm.editorOptions" ng-model="vm.code"></ui-codemirror>
+        
+    <div ui-ace="{
+        mode: 'json',
+        theme: 'idle_fingers',
+        useWrapMode: true
+      }">wow!</div>
+	
+
+</div>

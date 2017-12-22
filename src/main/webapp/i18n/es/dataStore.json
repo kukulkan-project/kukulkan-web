@@ -1,0 +1,52 @@
+{
+	"kukulkancraftsmanApp": {
+		"dataStore": {
+			"home": {
+				"title": "Data Stores",
+				"createLabel": "Crear nuevo Data Store",
+				"createOrEditLabel": "Crear o editar Data Store"
+			},
+			"created": "Un nuevo Data Store ha sido creado con el identificador {{ param }}",
+			"updated": "Un Data Store ha sido actualizado con el identificador {{ param }}",
+			"deleted": "Un Data Store ha sido eliminado con el identificador {{ param }}",
+			"delete": {
+				"question": "¿Seguro que quiere eliminar Data Store {{ id }}?"
+			},
+			"detail": {
+				"title": "Data Store"
+			},
+			"action": {
+				"testConnection": "Probar Conexión",
+				"runScript": "Ejecutar Script",
+				"createSchema": {
+					"label": "Create Schema",
+					"success": "Create Schema Success",
+					"failure": {
+						"general": "Create Schema Failure",
+						"schemaExist": "Schema already Exist!"
+					}
+				},
+				"dropSchema": {
+					"label": "Borrar Base de Datos",
+					"success": "La Base de Datos se Borro Exitosamente!",
+					"failure": {
+						"general": "No fue posible Borrar la Base de Datos",
+						"schemaNotExist": "La Base de Datos no Existe"
+					}
+				},
+				"connection": {
+					"success": "Conexión Exitosa!",
+					"failure": "Error en la Conexión"
+				}
+			},
+			"name": "Name",
+			"url": "Url",
+			"schema": "Base de Datos",
+			"driverClass": "Driver Class",
+			"username": "Username",
+			"password": "Password",
+			"tableTypes": "Table Types",
+			"script": "Script"
+		}
+	}
+}

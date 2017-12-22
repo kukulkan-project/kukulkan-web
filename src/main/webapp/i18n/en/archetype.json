@@ -1,0 +1,10 @@
+{
+    "kukulkancraftsmanApp": {
+        "Archetype" : {
+            "null": "",
+            "REST_SPRING_JPA": "REST_SPRING_JPA",
+            "PRIMEFACES_SPRING_MYBATIS": "PRIMEFACES_SPRING_MYBATIS",
+            "CONACYT": "CONACYT"
+        }
+    }
+}

@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="well">
+        <h2><span data-translate="kukulkancraftsmanApp.asset.detail.title">Asset</span> {{vm.asset.id}}</h2>
+        <hr>
+        <jhi-alert-error></jhi-alert-error>
+        <dl class="dl-horizontal jh-entity-details">
+            <dt><span data-translate="kukulkancraftsmanApp.asset.name">Name</span></dt>
+            <dd>
+                <span>{{vm.asset.name}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.author">Author</span></dt>
+            <dd>
+                <span>{{vm.asset.author}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.version">Version</span></dt>
+            <dd>
+                <span>{{vm.asset.version}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.comments">Comments</span></dt>
+            <dd>
+                <span>{{vm.asset.comments}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.problemDescription">Problem Description</span></dt>
+            <dd>
+                <p ng-bind-html="vm.asset.problemDescription"></p>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.useInstructions">Use Instructions</span></dt>
+            <dd>
+                <span>{{vm.asset.useInstructions}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.location">Location</span></dt>
+            <dd>
+                <span>{{vm.asset.location}}</span>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.implementationLevel">Implementation Level</span></dt>
+            <dd>
+                <a ui-sref="level-of-implementation-detail({id:vm.asset.implementationLevelId})">{{vm.asset.implementationLevelId}}</a>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.granularity">Granularity</span></dt>
+            <dd>
+                <a ui-sref="granularity-detail({id:vm.asset.granularityId})">{{vm.asset.granularityId}}</a>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.problemDomain">Problem Domain</span></dt>
+            <dd>
+                <a ui-sref="problem-domain-detail({id:vm.asset.problemDomainId})">{{vm.asset.problemDomainId}}</a>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.phase">Phase</span></dt>
+            <dd>
+                <a ui-sref="phase-detail({id:vm.asset.phaseId})">{{vm.asset.phaseId}}</a>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.discipline">Discipline</span></dt>
+            <dd>
+                <a ui-sref="discipline-detail({id:vm.asset.disciplineId})">{{vm.asset.disciplineId}}</a>
+            </dd>
+            <dt><span data-translate="kukulkancraftsmanApp.asset.state">State</span></dt>
+            <dd>
+                <a ui-sref="state-detail({id:vm.asset.stateId})">{{vm.asset.stateId}}</a>
+            </dd>
+        </dl>
+
+        <button type="submit"
+                ui-sref="{{ vm.previousState }}"
+                class="btn btn-info">
+            <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+        </button>
+
+        <button type="button" ui-sref="asset-detail.edit({id:vm.asset.id})" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+        </button>
+    </div>
+</div>

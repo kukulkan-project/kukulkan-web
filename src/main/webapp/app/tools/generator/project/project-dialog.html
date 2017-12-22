@@ -1,0 +1,244 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectLabel" data-translate="kukulkancraftsmanApp.project.home.createOrEditLabel">Create or edit a Project</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.project.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.project.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.projectId" for="field_projectId">Project Id</label>
+            <input type="text" class="form-control" name="projectId" id="field_projectId"
+                    ng-model="vm.project.projectId"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.projectId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.projectId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.projectId.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.appName" for="field_appName">App Name</label>
+            <input type="text" class="form-control" name="appName" id="field_appName"
+                    ng-model="vm.project.appName"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.appName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.appName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.appName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                    ng-model="vm.project.author"
+                    placeholder="kukulkan"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.author.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.author.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.author.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.version" for="field_version">Version</label>
+            <input type="text" class="form-control" name="version" id="field_version"
+                    ng-model="vm.project.version"
+                    placeholder="1.0.0"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.version.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.version.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.version.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.year" for="field_year">Year</label>
+            <input type="text" class="form-control" name="year" id="field_year"
+                    ng-model="vm.project.year"
+                    placeholder="2017"
+                    required ng-minlength="3" ng-pattern="/^[0-9]+/"/>
+            <div ng-show="editForm.year.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.year.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.year.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.year.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="Year">
+                    This field should follow pattern for "Year".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.groupId" for="field_groupId">Group Id</label>
+            <input type="text" class="form-control" name="groupId" id="field_groupId"
+                    ng-model="vm.project.groupId"
+                    placeholder="mx.infotec.dads"
+                    required/>
+            <div ng-show="editForm.groupId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.groupId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.packaging" for="field_packaging">Packaging</label>
+            <input type="text" class="form-control" name="packaging" id="field_packaging"
+                    ng-model="vm.project.packaging"
+                    placeholder="mx.infotec.dads.kukulkan"
+                    required/>
+            <div ng-show="editForm.packaging.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.packaging.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.dataStore" for="field_dataStore">Data Stor</label>
+            <select class="form-control" name="dataStore" ng-model="vm.project.dataStore" ng-options="dataStore.name for dataStore in vm.dataStores track by dataStore.id" id="field_dataStore" required></select>
+            <div ng-show="editForm.dataStore.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dataStore.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.daoLayerName" for="field_daoLayerName">Dao Layer Name</label>
+            <input type="text" class="form-control" name="daoLayerName" id="field_daoLayerName"
+                    ng-model="vm.project.daoLayerName"
+                    placeholder="dao"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.daoLayerName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.daoLayerName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.daoLayerName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.domainLayerName" for="field_domainLayerName">Domain Layer Name</label>
+            <input type="text" class="form-control" name="domainLayerName" id="field_domainLayerName"
+                    ng-model="vm.project.domainLayerName"
+                    placeholder="domain"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.domainLayerName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.domainLayerName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.domainLayerName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.serviceLayerName" for="field_serviceLayerName">Service Layer Name</label>
+            <input type="text" class="form-control" name="serviceLayerName" id="field_serviceLayerName"
+                    ng-model="vm.project.serviceLayerName"
+                    placeholder="service"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.serviceLayerName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.serviceLayerName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.serviceLayerName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.exceptionLayerName" for="field_exceptionLayerName">Exception Layer Name</label>
+            <input type="text" class="form-control" name="exceptionLayerName" id="field_exceptionLayerName"
+                    ng-model="vm.project.exceptionLayerName"
+                    placeholder="mx.infotec.exception"
+                    required ng-minlength="3"/>
+            <div ng-show="editForm.exceptionLayerName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.exceptionLayerName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.exceptionLayerName.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="3">
+                    This field is required to be at least 3 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.webLayerName" for="field_webLayerName">Web Layer Name</label>
+            <input type="text" class="form-control" name="webLayerName" id="field_webLayerName"
+                    ng-model="vm.project.webLayerName"
+                    placeholder="mx.infotec.web"
+                    required/>
+            <div ng-show="editForm.webLayerName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.webLayerName.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="kukulkancraftsmanApp.project.archetype" for="field_archetype">Archetype</label>
+            <select class="form-control" name="archetype" ng-model="vm.project.archetype" id="field_archetype" required>
+                <option value="REST_SPRING_JPA" data-translate="kukulkancraftsmanApp.Archetype.REST_SPRING_JPA">REST_SPRING_JPA</option>
+                <option value="PRIMEFACES_SPRING_MYBATIS" data-translate="kukulkancraftsmanApp.Archetype.PRIMEFACES_SPRING_MYBATIS">PRIMEFACES_SPRING_MYBATIS</option>
+                <option value="CONACYT" data-translate="kukulkancraftsmanApp.Archetype.CONACYT">CONACYT</option>
+            </select>
+            <div ng-show="editForm.archetype.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.archetype.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

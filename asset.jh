@@ -1,0 +1,84 @@
+entity Asset {
+	name String required,
+    author String required,
+    version String required,
+    comments String,
+    problemDescription String required,
+    useInstructions String required,
+    location String
+}
+
+entity File {
+	file AnyBlob
+}
+entity LevelOfImplementation {
+	name String required,
+    description String required,
+    briefDescription String,
+    order Integer
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Granularity {
+	name String required,
+    description String required,
+    briefDescription String required,
+    order Integer
+}
+
+entity ProblemDomain {
+	name String required,
+    description String required,
+    briefDescription String required,
+    order Integer
+}
+
+/**
+ * Task entity.
+ * @author The JHipster team.
+ */
+entity Phase {
+	name String required,
+    description String required,
+    briefDescription String required,
+    order Integer
+}
+
+entity Discipline {
+	name String required,
+    description String required,
+    briefDescription String required,
+    order Integer
+}
+
+/**
+ * The Employee entity.
+ */
+entity State {
+	name String required,
+    description String required,
+    briefDescription String required,
+    order Integer
+}
+
+relationship ManyToOne {
+    Asset{implementationLevel} to LevelOfImplementation,
+	Asset{granularity} to Granularity,
+    Asset{problemDomain} to ProblemDomain,
+    Asset{phase} to Phase,
+    Asset{discipline} to Discipline,
+    Asset{state} to State
+}
+
+relationship OneToOne {
+	Asset{files} to File{asset(name) required}
+}
+
+
+
+// Set pagination options
+paginate Asset, LevelOfImplementation, Granularity, ProblemDomain, Phase, Discipline, State with pagination
+
+// Set service options to all except few
+service all with serviceImpl

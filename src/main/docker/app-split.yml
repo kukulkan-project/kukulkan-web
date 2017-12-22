@@ -1,0 +1,16 @@
+version: '2'
+services:
+    kukulkan-app:
+        image: danimaniarqsoft/kukulkan
+        depends_on: 
+            - kukulkan-mongodb
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://kukulkan-mongodb:27017
+            - KUKULKAN_DATA_MYSQL_URI=jdbc:mysql://kukulkan-mysql:3306
+        ports:
+            - 8080:8080
+    kukulkan-mongodb:
+        extends:
+            file: mongodb.yml
+            service: kukulkan-mongodb
