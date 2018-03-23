@@ -89,7 +89,6 @@
         <sonar.sources>${project.basedir}/src/main/</sonar.sources>
         <sonar.surefire.reportsPath>${project.testresult.directory}/surefire-reports</sonar.surefire.reportsPath>
         <sonar.tests>${project.basedir}/src/test/</sonar.tests>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <!-- Spring properties -->
         <!-- Spring social -->
         <spring-social-google.version>1.0.0.RELEASE</spring-social-google.version>
