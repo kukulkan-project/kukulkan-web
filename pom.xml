@@ -90,8 +90,6 @@
         <sonar.surefire.reportsPath>${project.testresult.directory}/surefire-reports</sonar.surefire.reportsPath>
         <sonar.tests>${project.basedir}/src/test/</sonar.tests>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.organization>infotec</sonar.organization>
-        <sonar.login>da16b591b188248ad6aab99ccde5edd1fbbc669b</sonar.login>
         <!-- Spring properties -->
         <!-- Spring social -->
         <spring-social-google.version>1.0.0.RELEASE</spring-social-google.version>
